@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Robinhood Screener Export",
+  "version": "1.0.0",
+  "description": "Intercepts Robinhood screener data and exports it to Google Sheets.",
+  "permissions": [
+    "identity",
+    "webRequest",
+    "storage",
+    "scripting"
+  ],
+  "options_page": "options.html",
+  "host_permissions": [
+    "https://robinhood.com/*",
+    "https://*.robinhood.com/*",
+    "https://sheets.googleapis.com/*",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://robinhood.com/*", "https://*.robinhood.com/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "oauth2": {
+    "client_id": "250161923801-ighd7qaf2e22eqnf5fjmogak68qntbvp.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets"
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

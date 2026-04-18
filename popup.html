@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=360" />
+    <title>RH Screener Export</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Screener Export</h1>
+        <p class="subtitle">Robinhood → Google Sheets</p>
+      </header>
+
+      <!-- Auth Section -->
+      <section id="auth-section" class="section">
+        <div id="logged-out" class="auth-state">
+          <button id="btn-login" class="btn btn-primary full-width">
+            <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+              <path
+                fill="#fff"
+                d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"
+              />
+            </svg>
+            Login with Google
+          </button>
+        </div>
+        <div id="logged-in" class="auth-state hidden">
+          <div class="status-row">
+            <span class="badge badge-success">Authenticated</span>
+            <button id="btn-logout" class="btn btn-text">Logout</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Data Status Section -->
+      <section id="data-section" class="section">
+        <h2>Captured Data</h2>
+        <div id="no-data" class="status-message">
+          <p>No screener data captured yet.</p>
+          <p class="hint">
+            Navigate to the Robinhood Screener page and run a screen. The
+            extension will automatically intercept the results.
+          </p>
+        </div>
+        <div id="has-data" class="status-message hidden">
+          <div class="data-info">
+            <span id="stock-count" class="badge badge-info">0 stocks</span>
+            <span id="captured-time" class="captured-time"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Export Section -->
+      <section id="export-section" class="section">
+        <button id="btn-export" class="btn btn-export full-width" disabled>
+          Export to Google Sheets
+        </button>
+        <div id="export-status" class="export-status hidden"></div>
+        <a
+          id="sheet-link"
+          class="sheet-link hidden"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Spreadsheet ↗
+        </a>
+      </section>
+
+      <footer>
+        <div class="footer-row">
+          <p class="version">v1.0.0</p>
+          <button id="btn-settings" class="btn-settings" title="AI & Settings">
+            ⚙ Settings
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

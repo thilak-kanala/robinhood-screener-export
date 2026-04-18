@@ -1,0 +1,241 @@
+/* ── Popup Styles ── */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #e0e0e0;
+  background: #1a1a2e;
+  width: 360px;
+  min-height: 200px;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00c805;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 14px;
+}
+
+.section h2 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #4285f4;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3367d6;
+}
+
+.btn-export {
+  background: #00c805;
+  color: #111;
+}
+
+.btn-export:hover:not(:disabled) {
+  background: #00a804;
+}
+
+.btn-text {
+  background: none;
+  color: #888;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.btn-text:hover {
+  color: #e0e0e0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+/* ── Auth ── */
+.auth-state {
+  display: block;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: rgba(0, 200, 5, 0.15);
+  color: #00c805;
+}
+
+.badge-info {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285f4;
+}
+
+/* ── Data Info ── */
+.data-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captured-time {
+  font-size: 12px;
+  color: #888;
+}
+
+.status-message p {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ── Export Status ── */
+.export-status {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.export-status.info {
+  background: rgba(66, 133, 244, 0.1);
+  color: #4285f4;
+}
+
+.export-status.success {
+  background: rgba(0, 200, 5, 0.1);
+  color: #00c805;
+}
+
+.export-status.error {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.sheet-link {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  color: #4285f4;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sheet-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 8px;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.version {
+  font-size: 11px;
+  color: #555;
+}
+
+.btn-settings {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.2s;
+}
+
+.btn-settings:hover {
+  color: #00c805;
+}
+
+/* ── Utility ── */
+.hidden {
+  display: none !important;
+}

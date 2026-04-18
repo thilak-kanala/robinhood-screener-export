@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=500" />
+    <title>Screener Export – Settings</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 14px;
+        background: #1a1a2e;
+        color: #e0e0e0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 40px 16px;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 480px;
+      }
+
+      header {
+        margin-bottom: 32px;
+      }
+
+      header h1 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #00c805;
+      }
+
+      header p {
+        font-size: 13px;
+        color: #888;
+        margin-top: 4px;
+      }
+
+      .card {
+        background: #12122a;
+        border: 1px solid #2a2a4a;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+
+      .card h2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #aaa;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+      }
+
+      .field {
+        margin-bottom: 18px;
+      }
+
+      .field:last-of-type {
+        margin-bottom: 0;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #ccc;
+        margin-bottom: 6px;
+      }
+
+      select,
+      input[type="password"],
+      input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        background: #1a1a2e;
+        border: 1px solid #3a3a5a;
+        border-radius: 8px;
+        color: #e0e0e0;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      select:focus,
+      input:focus {
+        border-color: #00c805;
+      }
+
+      select option {
+        background: #1a1a2e;
+      }
+
+      .key-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .key-row input {
+        flex: 1;
+      }
+
+      .btn-reveal {
+        padding: 10px 14px;
+        background: #2a2a4a;
+        border: 1px solid #3a3a5a;
+        border-radius: 8px;
+        color: #aaa;
+        font-size: 13px;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+
+      .btn-reveal:hover {
+        background: #3a3a5a;
+        color: #e0e0e0;
+      }
+
+      .hint {
+        font-size: 12px;
+        color: #666;
+        margin-top: 6px;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 4px;
+      }
+
+      .btn-save {
+        padding: 11px 28px;
+        background: #00c805;
+        border: none;
+        border-radius: 8px;
+        color: #111;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .btn-save:hover {
+        background: #00a804;
+      }
+
+      .btn-clear {
+        padding: 11px 16px;
+        background: none;
+        border: 1px solid #3a3a5a;
+        border-radius: 8px;
+        color: #888;
+        font-size: 13px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+
+      .btn-clear:hover {
+        border-color: #f44336;
+        color: #f44336;
+      }
+
+      #status {
+        font-size: 13px;
+        font-weight: 500;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      #status.show {
+        opacity: 1;
+      }
+      #status.success {
+        color: #00c805;
+      }
+      #status.error {
+        color: #f44336;
+      }
+
+      .model-note {
+        margin-top: 16px;
+        padding: 12px;
+        background: rgba(66, 133, 244, 0.08);
+        border: 1px solid rgba(66, 133, 244, 0.2);
+        border-radius: 8px;
+        font-size: 12px;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      .model-note strong {
+        color: #4285f4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Settings</h1>
+        <p>Configure your AI provider for stock analysis enrichment.</p>
+      </header>
+
+      <div class="card">
+        <h2>AI Provider</h2>
+
+        <div class="field">
+          <label for="ai-provider">Provider</label>
+          <select id="ai-provider">
+            <option value="">— Select a provider —</option>
+            <option value="groq">Groq (Free – no credit card needed)</option>
+            <option value="gemini">Google Gemini</option>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic (Claude)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="ai-api-key">API Key</label>
+          <div class="key-row">
+            <input
+              type="password"
+              id="ai-api-key"
+              placeholder="Paste your API key here"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="btn-reveal" id="btn-reveal" type="button">
+              Show
+            </button>
+          </div>
+          <p class="hint">
+            Stored locally in your browser. Never transmitted anywhere except
+            directly to the selected AI provider.
+          </p>
+        </div>
+
+        <div class="model-note">
+          <strong>Don't have an API key?</strong> Groq is completely free — go
+          to
+          <a
+            href="https://console.groq.com/keys"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #00c805"
+            >console.groq.com/keys</a
+          >, sign up with Google, and copy your key. No credit card required.
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-save" id="btn-save">Save Settings</button>
+        <button class="btn-clear" id="btn-clear">Clear Saved Key</button>
+        <span id="status"></span>
+      </div>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>
