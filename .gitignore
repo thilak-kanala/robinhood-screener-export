@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+tmp/
+temp/
+
+# Bundler and tool caches
+.cache/
+.parcel-cache/
+.rollup.cache/
+.turbo/
+.vite/
+.webpack/
+.rpt2_cache/
+.eslintcache
+*.tsbuildinfo
+
+# Test and coverage artifacts
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Browser extension packaging and local runner output
+artifacts/
+web-ext-artifacts/
+.web-ext/
+*.crx
+*.xpi
+*.zip
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and local-only config
+.env
+.env.*
+!.env.example
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+
+# Local VS Code/test harness state
+.vscode-test/
